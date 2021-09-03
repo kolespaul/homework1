@@ -14,20 +14,20 @@ if (b < 2 || b > 36 || isNaN(a) || isNaN(b)){
 // 2) Task #2
 
 let d = parseInt(prompt('Number one', ''));
-
 if (isNaN(d)) {
     console.log('Некорректный ввод!');
-} else {
-    let e = parseInt(prompt('Number two', ''));
+    throw new Error();
+} 
 
-    if (isNaN(e)) {
-        console.log('Некорректный ввод!');
-    } else {
-        let f = d + e;
-        let g = d / e;
-        console.log(`Ответ: ${f}, ${g}.`);
-    }
-}
+let e = parseInt(prompt('Number two', ''));
+if (isNaN(e)) {
+    console.log('Некорректный ввод!');
+    throw new Error();
+} 
+
+let f = d + e;
+let g = d / e;
+console.log(`Ответ: ${f}, ${g}.`);
 
 
-
+// Вопрос: оправдано ли использование "new Error()" или можно решить с if/else задачу №2?
